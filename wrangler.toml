@@ -1,3 +1,14 @@
 name = "somstrategies"
+type = "javascript"
 compatibility_date = "2024-01-01"
-pages_build_output_dir = "public"
+
+[env.production]
+name = "somstrategies-prod"
+
+[build]
+command = ""
+cwd = null
+watch_paths = null
+
+[build.upload]
+format = "service-worker"
