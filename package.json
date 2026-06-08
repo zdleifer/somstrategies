@@ -1,15 +1,8 @@
 {
   "name": "somstrategies",
   "version": "1.0.0",
+  "description": "State of Mind Strategies - Commercial Growth Consulting",
   "scripts": {
-    "dev": "npx serve public -p 3000",
-    "build": "echo 'Static site — no build step required'",
-    "deploy": "npx wrangler pages deploy public --project-name=somstrategies"
-  },
-  "dependencies": {
-    "wrangler": "^3.0.0"
-  },
-  "devDependencies": {
-    "serve": "^14.2.6"
+    "dev": "npx serve public -p 3000"
   }
 }
