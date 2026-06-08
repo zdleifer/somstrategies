@@ -27,11 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
         : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
     });
 
-    // Close on nav link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    // Close mobile menu when a non-dropdown nav link is clicked
+    document.querySelectorAll('.nav-links a:not(.dropdown-trigger)').forEach(link => {
       link.addEventListener('click', () => body.classList.remove('mobile-menu-open'));
     });
   }
+
+  /* ---- Mobile Services dropdown toggle ---- */
+  // On mobile the dropdown trigger needs click, not hover
+  document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      if (mobileToggle && window.getComputedStyle(mobileToggle).display !== 'none') {
+        e.preventDefault();
+        trigger.closest('.nav-dropdown').classList.toggle('mobile-open');
+      }
+    });
+  });
 
   /* ---- FAQ accordion ---- */
   document.querySelectorAll('.faq-question').forEach(btn => {
