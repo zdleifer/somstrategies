@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Image Options — internal review</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:#f4f7fb; color:#0f172a; padding:48px 24px 80px; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  h1 { font-size:2rem; margin-bottom:8px; }
+  .lead { color:#475569; margin-bottom:8px; font-size:1.05rem; }
+  .note { color:#64748b; font-size:0.9rem; margin-bottom:40px; }
+  h2 { font-size:1.1rem; margin:40px 0 6px; color:#1a6b4f; letter-spacing:0.02em; }
+  .sub { color:#64748b; font-size:0.9rem; margin-bottom:20px; }
+  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  .card { background:#fff; border:1px solid rgba(15,23,42,0.08); border-radius:16px; overflow:hidden; box-shadow:0 6px 20px rgba(15,23,42,0.06); }
+  .frame { aspect-ratio:21/9; background:#e9eef6; overflow:hidden; }
+  .frame img { width:100%; height:100%; object-fit:cover; display:block; }
+  .meta { padding:16px 20px; display:flex; align-items:center; gap:12px; }
+  .code { font-weight:800; font-size:1.1rem; color:#1a6b4f; background:rgba(26,107,79,0.08); padding:4px 12px; border-radius:8px; }
+  .desc { font-size:0.9rem; color:#475569; }
+  .live { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#b45309; background:#fef3c7; padding:3px 9px; border-radius:100px; margin-left:auto; }
+  @media (max-width:720px){ .grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Service-page image options</h1>
+  <p class="lead">Two directions to choose from. Tell me which code you want for each service page (or mix and match).</p>
+  <p class="note">Codes: reply like "Digital Transformation = B1, Fractional CMO = B3, MarTech = A3". You can also say "all architectural" or "keep current."</p>
+
+  <h2>Direction A — People / Scenes (what's live now)</h2>
+  <p class="sub">More literal and human, but reads a bit like stock photography.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="frame"><img src="/images/data-presentation.jpg" alt=""></div>
+      <div class="meta"><span class="code">A1</span><span class="desc">Data presentation to a team</span><span class="live">Live · Digital Transf.</span></div>
+    </div>
+    <div class="card">
+      <div class="frame"><img src="/images/strategy-meeting.jpg" alt=""></div>
+      <div class="meta"><span class="code">A2</span><span class="desc">Strategy meeting</span><span class="live">Live · Fractional CMO</span></div>
+    </div>
+    <div class="card">
+      <div class="frame"><img src="/images/analytics-dashboard.jpg" alt=""></div>
+      <div class="meta"><span class="code">A3</span><span class="desc">Analytics dashboard close-up</span><span class="live">Live · MarTech</span></div>
+    </div>
+  </div>
+
+  <h2>Direction B — Architectural / Abstract</h2>
+  <p class="sub">More premium and understated. No people, no "stocky" feel. Blue / neutral tones that complement the green brand.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="frame"><img src="/options/arch-skyscrapers.jpg" alt=""></div>
+      <div class="meta"><span class="code">B1</span><span class="desc">Skyscrapers, looking up (landscape)</span></div>
+    </div>
+    <div class="card">
+      <div class="frame"><img src="/options/arch-blueglass.jpg" alt=""></div>
+      <div class="meta"><span class="code">B2</span><span class="desc">Blue glass facade grid</span></div>
+    </div>
+    <div class="card">
+      <div class="frame"><img src="/options/arch-curved.jpg" alt=""></div>
+      <div class="meta"><span class="code">B3</span><span class="desc">Curved glass architecture</span></div>
+    </div>
+    <div class="card">
+      <div class="frame"><img src="/options/arch-darkglass.jpg" alt=""></div>
+      <div class="meta"><span class="code">B4</span><span class="desc">Dark glass tower (moody)</span></div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:48px;">If neither direction feels right, tell me the vibe you want (e.g. "Vegas/hospitality", "AI/tech abstract", "black &amp; white", "no photos at all") and I'll pull a fresh set.</p>
+</div>
+</body>
+</html>
