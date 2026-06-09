@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // On mobile the dropdown trigger needs click, not hover
   document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
+      e.preventDefault(); // menu toggle, never a real navigation
       if (mobileToggle && window.getComputedStyle(mobileToggle).display !== 'none') {
-        e.preventDefault();
         trigger.closest('.nav-dropdown').classList.toggle('mobile-open');
       }
     });

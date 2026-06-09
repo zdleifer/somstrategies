@@ -132,19 +132,24 @@ section { padding: var(--section-py) 0; }
 /* Dropdown — with 0.25s hide-delay so mouse can reach the menu */
 .nav-dropdown { position: relative; }
 .dropdown-menu {
-  position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%) translateY(-4px);
+  position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(-6px);
   background: #fff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 6px; min-width: 270px; list-style: none;
   box-shadow: 0 12px 36px rgba(15,23,42,0.12), 0 2px 8px rgba(15,23,42,0.06);
   opacity: 0; pointer-events: none;
-  transition: opacity 0.15s ease 0.25s, transform 0.15s ease 0.25s;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
-.nav-dropdown:hover .dropdown-menu {
+/* Invisible bridge so the cursor can travel from the trigger into the menu
+   without crossing a dead gap that would close it */
+.dropdown-menu::before {
+  content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px;
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
   opacity: 1; pointer-events: all;
   transform: translateX(-50%) translateY(0);
-  transition-delay: 0s;
 }
 .dropdown-menu li a {
   display: block; padding: 10px 16px; font-size: 0.875rem;
