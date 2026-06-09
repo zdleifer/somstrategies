@@ -209,21 +209,47 @@ section { padding: var(--section-py) 0; }
   margin-bottom: 36px; max-width: 540px; line-height: 1.75;
 }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
-/* Hero logos section */
-.hero-logos {
-  padding-top: 40px; margin-top: 40px; border-top: 1px solid var(--border-subtle);
+/* ============================================================
+   EXPERIENCE TICKER (logo marquee)
+   ============================================================ */
+.ticker-section {
+  padding: 32px 0;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
 }
-.hero-logos-label {
-  font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 18px;
+.ticker-label {
+  text-align: center; font-size: 0.6875rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-tertiary); margin-bottom: 24px;
 }
-.hero-logos-track {
-  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+.ticker {
+  display: flex; gap: 64px; width: 100%; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
-.hero-logo-item {
-  font-size: 0.875rem; font-weight: 600; color: var(--text-secondary);
-  padding: 8px 16px; background: var(--bg-secondary); border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
+.ticker-track {
+  flex-shrink: 0; display: flex; align-items: center; gap: 64px;
+  min-width: 100%; justify-content: space-around;
+  animation: ticker-scroll 45s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-logo {
+  height: 34px; width: auto; flex-shrink: 0; object-fit: contain;
+  filter: grayscale(100%); opacity: 0.5;
+  transition: filter var(--transition), opacity var(--transition);
+}
+.ticker-logo:hover { filter: grayscale(0); opacity: 1; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% - 64px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+  .ticker { flex-wrap: wrap; justify-content: center; gap: 40px 56px; }
+  .ticker-track:last-child { display: none; }
+  .ticker { -webkit-mask-image: none; mask-image: none; }
 }
 
 /* Hero proof card (right column) */

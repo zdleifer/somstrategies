@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="text-align:center; padding: 48px 0;">
             <div style="font-size:3rem; margin-bottom:16px;">✓</div>
             <h3 style="margin-bottom:8px;">Message received!</h3>
-            <p>Thanks for reaching out. I'll be in touch within 1 business day.</p>
+            <p>Thanks for reaching out. We'll be in touch within 1 business day.</p>
           </div>
         `;
       }, 1200);
