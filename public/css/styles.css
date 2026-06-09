@@ -226,18 +226,18 @@ section { padding: var(--section-py) 0; }
 }
 .ticker {
   display: flex; gap: 64px; width: 100%; overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 .ticker-track {
   flex-shrink: 0; display: flex; align-items: center; gap: 64px;
-  min-width: 100%; justify-content: space-around;
-  animation: ticker-scroll 45s linear infinite;
+  width: max-content;
+  animation: ticker-scroll 38s linear infinite;
 }
 .ticker:hover .ticker-track { animation-play-state: paused; }
 .ticker-logo {
   height: 34px; width: auto; flex-shrink: 0; object-fit: contain;
-  filter: grayscale(100%); opacity: 0.5;
+  filter: grayscale(100%); opacity: 0.55;
   transition: filter var(--transition), opacity var(--transition);
 }
 .ticker-logo:hover { filter: grayscale(0); opacity: 1; }
@@ -245,11 +245,18 @@ section { padding: var(--section-py) 0; }
   from { transform: translateX(0); }
   to   { transform: translateX(calc(-100% - 64px)); }
 }
+/* Reduced motion: show ALL logos, wrapped and centered, nothing clipped */
 @media (prefers-reduced-motion: reduce) {
-  .ticker-track { animation: none; }
-  .ticker { flex-wrap: wrap; justify-content: center; gap: 40px 56px; }
-  .ticker-track:last-child { display: none; }
-  .ticker { -webkit-mask-image: none; mask-image: none; }
+  .ticker {
+    flex-wrap: wrap; justify-content: center; overflow: visible;
+    gap: 28px 48px;
+    -webkit-mask-image: none; mask-image: none;
+  }
+  .ticker-track {
+    flex-wrap: wrap; justify-content: center; width: 100%;
+    gap: 28px 48px; animation: none;
+  }
+  .ticker-track + .ticker-track { display: none; }
 }
 
 /* Hero proof card (right column) */
